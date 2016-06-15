@@ -5,9 +5,8 @@ namespace ColoredCow\TwoFactorAuth;
 use Exception;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
-use myocuhub\Events\MakeAuditEntry;
-use myocuhub\Facades\Sms;
-use myocuhub\Models\TwoFactorAuth;
+use ColoredCow\Twilio\Facades\Sms;
+use ColoredCow\TwoFactorAuth\TwoFactorAuth;
 
 trait TwoFactorAuthenticatable {
 
@@ -65,13 +64,6 @@ trait TwoFactorAuthenticatable {
 		if ($e != null) {
 			Log::error($e);
 		}
-		
-		$action = 'Two Factor Authentication request failed : ' . $this->name;
-        $description = $code . ' : ' . config('errorcodes.two_factor_auth.'. $code ); 
-        $filename = basename(__FILE__);
-        $ip = '';
-
-        Event::fire(new MakeAuditEntry($action, $description, $filename, $ip));
 
 	}
 

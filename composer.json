@@ -2,7 +2,7 @@
 	"name": "coloredcow/laravel-two-factor-auth",
 	"description": "Two Factor Authentication for Laravel using Twilio",
 	"type": "",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"keywords":["laravel","twilio","two-factor-authentication","php","twilio-sdk","multi-factor-authentication"],
 	"homepage": "http://coloredcow.in",
 	"license":"GPL-3.0+",
